@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shubham Sharma — Backend Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ivory:     #F8F5EF;
+      --ivory-2:   #F0EBE0;
+      --crimson:   #8C1515;
+      --crimson-2: #6E1010;
+      --navy:      #1B2848;
+      --gold:      #C4963A;
+      --ink:       #1A1111;
+      --ink-2:     #3D2F2F;
+      --muted:     #7A6A60;
+      --border:    #DDD4C4;
+      --border-2:  #C8BDB0;
+      --font-d:    'Cormorant Garamond', 'Georgia', serif;
+      --font-b:    'EB Garamond', 'Georgia', serif;
+      --font-u:    'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--font-b);
+      font-size: 18px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6%;
+      height: 56px;
+      background: rgba(248, 245, 239, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wordmark {
+      font-family: var(--font-d);
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .nav-wordmark span { color: var(--crimson); }
+
+    .nav-links {
+      display: flex; gap: 2.5rem; list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-u);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--crimson); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 6% 60px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Signature: Monogram Crest */
+    .crest {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      border: 1.5px solid var(--crimson);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 2.5rem;
+      position: relative;
+    }
+    .crest::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border-radius: 50%;
+      border: 0.5px solid var(--gold);
+    }
+    .crest-monogram {
+      font-family: var(--font-d);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--crimson);
+      letter-spacing: 0.05em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-location {
+      font-family: var(--font-u);
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-family: var(--font-d);
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--crimson);
+    }
+
+    .hero-title {
+      font-family: var(--font-d);
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* Gold rule */
+    .gold-rule {
+      width: 100px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-bio {
+      font-family: var(--font-b);
+      font-size: 1.1rem;
+      color: var(--ink-2);
+      max-width: 620px;
+      line-height: 1.75;
+      margin: 0 auto 3rem;
+    }
+
+    .hero-actions {
+      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+      margin-bottom: 4rem;
+    }
+
+    .btn-crimson {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--crimson);
+      color: #fff;
+      font-family: var(--font-u);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      text-decoration: none;
+      border: 1px solid var(--crimson);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-crimson:hover { background: var(--crimson-2); transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--font-u);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      text-decoration: none;
+      border: 1px solid var(--border-2);
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--crimson); color: var(--crimson); transform: translateY(-1px); }
+
+    /* Credential strip */
+    .credential-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border: 1px solid var(--border-2);
+      background: var(--ivory-2);
+    }
+
+    .credential-item {
+      padding: 1.2rem 2.5rem;
+      border-right: 1px solid var(--border-2);
+      text-align: center;
+    }
+    .credential-item:last-child { border-right: none; }
+
+    .cred-num {
+      font-family: var(--font-d);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--crimson);
+      line-height: 1;
+      display: block;
+    }
+    .cred-label {
+      font-family: var(--font-u);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ─── BODY LAYOUT ─── */
+    .page-body {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0 6%;
+    }
+
+    /* CV-style section: left label, right content */
+    .cv-section {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0 4rem;
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-label {
+      padding-top: 0.35rem;
+    }
+
+    .section-tag {
+      font-family: var(--font-u);
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--crimson);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: var(--font-d);
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+    }
+
+    .cv-content { }
+
+    /* ─── SKILLS ─── */
+    .skills-table { width: 100%; }
+
+    .skill-row {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--ivory-2);
+    }
+    .skill-row:last-child { border-bottom: none; }
+
+    .skill-domain {
+      font-family: var(--font-b);
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--muted);
+      min-width: 160px;
+      flex-shrink: 0;
+    }
+
+    .skill-items {
+      font-family: var(--font-b);
+      font-size: 1rem;
+      color: var(--ink-2);
+      line-height: 1.5;
+    }
+
+    /* ─── PROJECTS (Case Study Format) ─── */
+    .case-study {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .case-study:first-child { padding-top: 0; }
+    .case-study:last-child { border-bottom: none; }
+
+    .case-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .case-name {
+      font-family: var(--font-d);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    .case-status {
+      font-family: var(--font-u);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border: 1px solid;
+      margin-top: 4px;
+    }
+    .status-live { color: #15622A; border-color: #15622A; background: rgba(21,98,42,0.06); }
+    .status-arch { color: var(--crimson); border-color: var(--crimson); background: rgba(140,21,21,0.05); }
+    .status-dep  { color: var(--navy); border-color: var(--navy); background: rgba(27,40,72,0.05); }
+
+    .case-impact {
+      font-family: var(--font-d);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .case-body {
+      font-family: var(--font-b);
+      font-size: 1rem;
+      color: var(--ink-2);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .case-tech {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-pill {
+      font-family: var(--font-u);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-2);
+      border: 1px solid var(--border-2);
+      padding: 4px 10px;
+      background: white;
+    }
+
+    .case-links {
+      display: flex; gap: 1.5rem;
+    }
+    .case-link {
+      font-family: var(--font-u);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--crimson);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .case-link:hover { color: var(--crimson-2); border-color: var(--crimson-2); }
+
+    /* ─── ACHIEVEMENTS ─── */
+    .achievement-entry {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--ivory-2);
+      display: flex;
+      gap: 1.5rem;
+      align-items: baseline;
+    }
+    .achievement-entry:first-child { padding-top: 0; }
+    .achievement-entry:last-child { border-bottom: none; }
+
+    .ach-bullet {
+      color: var(--crimson);
+      font-family: var(--font-d);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .ach-body {
+      font-family: var(--font-b);
+      font-size: 1rem;
+      color: var(--ink-2);
+      line-height: 1.65;
+    }
+    .ach-body strong { color: var(--ink); font-weight: 600; }
+
+    /* ─── CERTIFICATIONS ─── */
+    .cert-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--ivory-2);
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .cert-entry:first-child { padding-top: 0; }
+    .cert-entry:last-child { border-bottom: none; }
+
+    .cert-name-text {
+      font-family: var(--font-b);
+      font-size: 1rem;
+      color: var(--ink-2);
+    }
+    .cert-name-text strong { color: var(--ink); }
+    .cert-org {
+      font-family: var(--font-u);
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      background: white;
+      white-space: nowrap;
+    }
+
+    /* ─── EDUCATION ─── */
+    .edu-entry {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--ivory-2);
+    }
+    .edu-entry:last-child { border-bottom: none; }
+
+    .edu-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      flex-wrap: wrap; gap: 0.5rem;
+    }
+
+    .edu-degree-text {
+      font-family: var(--font-d);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .edu-cgpa-text {
+      font-family: var(--font-d);
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--crimson);
+    }
+
+    .edu-sub {
+      font-family: var(--font-b);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .edu-courses {
+      margin-top: 0.75rem;
+      font-family: var(--font-b);
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact-section {
+      padding: 5rem 0 6rem;
+      text-align: center;
+    }
+
+    .contact-headline {
+      font-family: var(--font-d);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .contact-headline em { font-style: italic; color: var(--crimson); }
+
+    .contact-sub {
+      font-family: var(--font-b);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-row {
+      display: flex; flex-wrap: wrap; gap: 1.25rem; justify-content: center;
+    }
+
+    .contact-item {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-u);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--ink-2);
+      border: 1px solid var(--border-2);
+      padding: 11px 22px;
+      background: white;
+      transition: all 0.2s;
+    }
+    .contact-item:hover { border-color: var(--crimson); color: var(--crimson); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-mark {
+      font-family: var(--font-d);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .footer-links {
+      display: flex; gap: 1.5rem;
+    }
+    .footer-links a {
+      font-family: var(--font-u);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--crimson); }
+
+    /* ─── REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 700px) {
+      .cv-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 3.5rem 0;
+      }
+      .cv-label { padding-top: 0; }
+      .credential-item { padding: 1rem 1.5rem; }
+      nav { padding: 0 1.5rem; }
+      .nav-links { gap: 1.25rem; }
+      .nav-links a { font-size: 0.65rem; }
+      .page-body { padding: 0 1.5rem; }
+      #hero { padding: 80px 1.5rem 50px; }
+      footer { flex-direction: column; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-wordmark" href="#hero">S<span>.</span>Sharma</a>
+    <ul class="nav-links">
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+
+    <div class="crest reveal">
+      <span class="crest-monogram">SS</span>
+    </div>
+
+    <p class="hero-location reveal">Mumbai, India &nbsp;·&nbsp; Backend Engineering</p>
+
+    <h1 class="reveal">Shubham<br><em>Sharma</em></h1>
+
+    <p class="hero-title reveal">Java · Spring Boot · Microservices · AWS</p>
+
+    <div class="gold-rule reveal"></div>
+
+    <p class="hero-bio reveal">
+      I architect and deploy production-grade backend systems — from an 8-service microservices banking platform to JWT-secured full-stack banking applications running live in production. Graduating in 2026, targeting backend engineering roles at product-based companies.
+    </p>
+
+    <div class="hero-actions reveal">
+      <a class="btn-crimson" href="https://github.com/shubham-sharma-03" target="_blank" rel="noopener">GitHub Profile</a>
+      <a class="btn-outline" href="mailto:sharmashubham05275@gmail.com">Get in Touch</a>
+      <a class="btn-outline" href="https://linkedin.com/in/shubhamsharma2004" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+
+    <div class="credential-strip reveal">
+      <div class="credential-item">
+        <span class="cred-num">45+</span>
+        <span class="cred-label">REST APIs Built</span>
+      </div>
+      <div class="credential-item">
+        <span class="cred-num">8</span>
+        <span class="cred-label">Microservices</span>
+      </div>
+      <div class="credential-item">
+        <span class="cred-num">3</span>
+        <span class="cred-label">Live Deployments</span>
+      </div>
+      <div class="credential-item">
+        <span class="cred-num">200+</span>
+        <span class="cred-label">DSA Problems</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- BODY -->
+  <div class="page-body">
+
+    <!-- EXPERTISE -->
+    <div class="cv-section reveal" id="expertise">
+      <div class="cv-label">
+        <span class="section-tag">Expertise</span>
+        <h2>Technical Skills</h2>
+      </div>
+      <div class="cv-content">
+        <div class="skills-table">
+          <div class="skill-row">
+            <span class="skill-domain">Languages</span>
+            <span class="skill-items">Java, SQL, Python, JavaScript</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-domain">Frameworks</span>
+            <span class="skill-items">Spring Boot, Spring Security, Spring Cloud (Gateway, Eureka, OpenFeign), Spring Data JPA, Hibernate</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-domain">Databases</span>
+            <span class="skill-items">PostgreSQL, MySQL</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-domain">DevOps &amp; Tools</span>
+            <span class="skill-items">Docker, Docker Compose, Git, Maven, Postman, IntelliJ IDEA, Linux</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-domain">Cloud</span>
+            <span class="skill-items">AWS EC2, S3, RDS &nbsp;·&nbsp; Redis, Kubernetes, CI/CD (familiar)</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-domain">Testing</span>
+            <span class="skill-items">JUnit 5, Mockito</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-domain">Core Concepts</span>
+            <span class="skill-items">REST APIs, Microservices, JWT, RBAC, OOP, SOLID Principles, Design Patterns, MVC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="cv-section reveal" id="work">
+      <div class="cv-label">
+        <span class="section-tag">Work</span>
+        <h2>Projects</h2>
+      </div>
+      <div class="cv-content">
+
+        <!-- 1. Digital Banking System -->
+        <div class="case-study">
+          <div class="case-header">
+            <span class="case-name">Digital Banking System</span>
+            <span class="case-status status-arch">8-Service Microservices</span>
+          </div>
+          <p class="case-impact">A cloud-native microservices platform spanning six banking domains, containerized end-to-end with Docker Compose.</p>
+          <p class="case-body">
+            Architected a distributed banking system across 8 independent services — Authentication, Account, Transaction, Loan, Card, and Customer — each with its own bounded context. Engineered Spring Cloud Gateway and Eureka Service Discovery to enable scalable inter-service routing, eliminating hardcoded URLs and decoupling all services. Secured all REST endpoints with Spring Security, JWT authentication, and RBAC enforced consistently at the gateway layer.
+          </p>
+          <div class="case-tech">
+            <span class="tech-pill">Java 17</span>
+            <span class="tech-pill">Spring Boot</span>
+            <span class="tech-pill">Spring Cloud</span>
+            <span class="tech-pill">Eureka</span>
+            <span class="tech-pill">API Gateway</span>
+            <span class="tech-pill">Docker Compose</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">JWT</span>
+          </div>
+          <div class="case-links">
+            <a class="case-link" href="https://github.com/shubham-sharma-03/digital-banking-system" target="_blank" rel="noopener">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- 2. MyBank -->
+        <div class="case-study">
+          <div class="case-header">
+            <span class="case-name">MyBank</span>
+            <span class="case-status status-live">Live · Render</span>
+          </div>
+          <p class="case-impact">A production-deployed, full-stack monolithic banking application — six modules, JWT-secured, JPMC-inspired interface.</p>
+          <p class="case-body">
+            Engineered a complete banking platform covering Accounts, Cards, Loans, Transactions, Statements, and Authentication using Spring Boot and PostgreSQL. Implemented layered security with Spring Security, JWT, and Role-Based Access Control, enforcing authorization consistently across all modules. Designed a normalized relational schema with referential integrity across all banking entities. Built a Chase-inspired Vanilla JS frontend with real-time account management and card controls, deployed live on Render.
+          </p>
+          <div class="case-tech">
+            <span class="tech-pill">Java</span>
+            <span class="tech-pill">Spring Boot</span>
+            <span class="tech-pill">Spring Security</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">JWT</span>
+            <span class="tech-pill">Vanilla JS</span>
+            <span class="tech-pill">Render</span>
+          </div>
+          <div class="case-links">
+            <a class="case-link" href="https://github.com/shubham-sharma-03/My-Bank" target="_blank" rel="noopener">View on GitHub →</a>
+            <a class="case-link" href="https://my-bank-a3dv.onrender.com/" target="_blank" rel="noopener">Live Demo →</a>
+          </div>
+        </div>
+
+        <!-- 3. Smart Service Booking -->
+        <div class="case-study">
+          <div class="case-header">
+            <span class="case-name">Smart Service Booking Platform</span>
+            <span class="case-status status-dep">Live · Render</span>
+          </div>
+          <p class="case-impact">A multi-role booking platform with real-time technician tracking and priority-based dispatch.</p>
+          <p class="case-body">
+            Built and deployed a multi-role service platform with 20+ REST API endpoints covering customer registration, technician assignment, booking lifecycle, and queue management. Integrated Google Maps API for real-time technician location tracking. Implemented a priority-based dispatch system using Spring Boot's layered architecture, backed by a normalized PostgreSQL schema with relational integrity across bookings, technicians, and service categories. All endpoints secured with JWT authentication.
+          </p>
+          <div class="case-tech">
+            <span class="tech-pill">Java</span>
+            <span class="tech-pill">Spring Boot</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">JWT</span>
+            <span class="tech-pill">Google Maps API</span>
+            <span class="tech-pill">REST APIs</span>
+            <span class="tech-pill">Render</span>
+          </div>
+          <div class="case-links">
+            <a class="case-link" href="https://github.com/shubham-sharma-03/smart-service-booking-platform" target="_blank" rel="noopener">View on GitHub →</a>
+            <a class="case-link" href="https://smart-service-booking-platform-ee5n.onrender.com/" target="_blank" rel="noopener">Live Demo →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BACKGROUND: Education, Achievements, Certs -->
+    <div class="cv-section reveal" id="background">
+      <div class="cv-label">
+        <span class="section-tag">Background</span>
+        <h2>Education &amp; Credentials</h2>
+      </div>
+      <div class="cv-content">
+
+        <!-- Education -->
+        <div style="margin-bottom: 2.5rem;">
+          <div class="edu-entry">
+            <div class="edu-row">
+              <span class="edu-degree-text">B.E. Electronics &amp; Telecommunication Engineering</span>
+              <span class="edu-cgpa-text">7.25 CGPA</span>
+            </div>
+            <p class="edu-sub">Atharva College of Engineering · Mumbai University · 2022 – 2026</p>
+            <p class="edu-courses">Data Structures &amp; Algorithms · OOP · DBMS · Operating Systems · Computer Networks · Software Engineering</p>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div style="margin-bottom: 2.5rem;">
+          <div class="section-tag" style="margin-bottom: 1rem;">Certifications</div>
+          <div class="cert-entry">
+            <span class="cert-name-text"><strong>Software Engineering Virtual Experience</strong></span>
+            <span class="cert-org">JPMorgan Chase · Forage</span>
+          </div>
+          <div class="cert-entry">
+            <span class="cert-name-text"><strong>AWS Solutions Architect</strong> — Virtual Experience</span>
+            <span class="cert-org">Amazon Web Services · Forage</span>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div>
+          <div class="section-tag" style="margin-bottom: 1rem;">Achievements</div>
+          <div class="achievement-entry">
+            <span class="ach-bullet">—</span>
+            <span class="ach-body">Designed and implemented <strong>45+ REST API endpoints</strong> across multiple backend applications using Java, Spring Boot, and PostgreSQL.</span>
+          </div>
+          <div class="achievement-entry">
+            <span class="ach-bullet">—</span>
+            <span class="ach-body"><strong>Co-authored a technical research paper</strong> on LiteWing, a gesture-controlled drone system built with ESP32-S3 and MPU6050 sensors.</span>
+          </div>
+          <div class="achievement-entry">
+            <span class="ach-bullet">—</span>
+            <span class="ach-body">Solved <strong>200+ Data Structures &amp; Algorithms problems</strong> on LeetCode and GeeksforGeeks — Trees, Graphs, Dynamic Programming, Binary Search.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact-section" class="reveal" style="padding: 5rem 0 6rem; text-align:center; border-top: none;">
+      <div class="gold-rule" style="margin-bottom: 2.5rem;"></div>
+      <h2 class="contact-headline">Open to <em>opportunities</em></h2>
+      <p class="contact-sub">Backend engineering roles · Mumbai &amp; Remote · Available 2026</p>
+      <div class="contact-row">
+        <a class="contact-item" href="mailto:sharmashubham05275@gmail.com">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <a class="contact-item" href="https://github.com/shubham-sharma-03" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a class="contact-item" href="https://linkedin.com/in/shubhamsharma2004" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="contact-item" href="tel:+917715931782">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 77159 31782
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /page-body -->
+
+  <footer>
+    <span class="footer-mark">Shubham Sharma &nbsp;·&nbsp; Mumbai &nbsp;·&nbsp; 2026</span>
+    <div class="footer-links">
+      <a href="https://github.com/shubham-sharma-03" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/shubhamsharma2004" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:sharmashubham05275@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
