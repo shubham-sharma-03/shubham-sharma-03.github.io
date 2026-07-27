@@ -135,13 +135,13 @@
     /* LIGHTBOX */
     .lb-overlay{display:none;position:fixed;inset:0;z-index:999;background:rgba(8,6,4,.95);align-items:center;justify-content:center;padding:1.5rem}
     .lb-overlay.open{display:flex}
-    .lb-box{position:relative;max-width:1000px;width:100%;display:flex;flex-direction:column;align-items:center;gap:1rem}
+    .lb-box{position:relative;width:95vw;max-width:95vw;;display:flex;flex-direction:column;align-items:center;gap:1rem}
     .lb-top{width:100%;display:flex;justify-content:space-between;align-items:center;margin-bottom:.25rem}
     .lb-title{font-family:var(--font-d);font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.7)}
     .lb-close{background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);font-family:var(--font-u);font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:7px 16px;cursor:pointer;transition:all .2s}
     .lb-close:hover{border-color:var(--crimson);color:var(--crimson)}
     .lb-img-wrap{width:100%;border:1px solid rgba(255,255,255,.08);overflow:hidden;background:#000}
-    .lb-img-wrap img{width:100%;height:auto;display:block;max-height:72vh;object-fit:contain}
+    .lb-img-wrap img{width:100%;height:auto;display:block;max-width:100%;max-height:90vh;object-fit:contain;}
     .lb-bottom{width:100%;display:flex;align-items:center;justify-content:space-between}
     .lb-caption{font-family:var(--font-u);font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
     .lb-nav{display:flex;align-items:center;gap:1rem}
@@ -238,7 +238,7 @@
     <span class="case-status status-arch">8-Service Microservices</span>
   </div>
   <div class="case-img-wrap" onclick="lbOpen('dbs')">
-    <img src="./dbs-dash.png" alt="Digital Banking System — Dashboard" loading="lazy" />
+    <img src="images/dbs-dashboard.png" alt="Digital Banking System — Dashboard" loading="lazy" />
     <div class="case-img-overlay"><span>⊞ View Project Gallery</span></div>
   </div>
   <p class="case-impact">A cloud-native microservices platform spanning six banking domains, containerized end-to-end with Docker Compose.</p>
@@ -259,7 +259,7 @@
           <span class="case-status status-live">Live · Render</span>
         </div>
         <div class="case-img-wrap" onclick="lbOpen('mybank')">
-          <img src="./mybank-dash.png" alt="MyBank — Banking Dashboard" loading="lazy" />
+          <img src="images/mybank-dashboard.png" alt="MyBank — Banking Dashboard" loading="lazy" />
           <div class="case-img-overlay"><span>⊞ View Project Gallery</span></div>
         </div>
         <p class="case-impact">A production-deployed, full-stack monolithic banking application — six modules, JWT-secured, JPMC-inspired interface.</p>
@@ -281,7 +281,7 @@
           <span class="case-status status-dep">Live · Render</span>
         </div>
         <div class="case-img-wrap" onclick="lbOpen('smart')">
-          <img src="./smart-home.png" alt="Smart Service Booking — Home Page" loading="lazy" />
+          <img src="images/smart-home.png" alt="Smart Service Booking — Home Page" loading="lazy" />
           <div class="case-img-overlay"><span>⊞ View Project Gallery</span></div>
         </div>
         <p class="case-impact">A multi-role booking platform with real-time technician tracking and priority-based dispatch.</p>
@@ -381,58 +381,59 @@
   const GALLERY = {
   dbs: [
     {
-      src: "https://github.com/user-attachments/assets/a2c79bec-a4b0-4d66-b14a-044d1f8a998b",
-      label: "Login Page"
-    },
+src:"images/dbs-login.png",
+label:"Login Page"
+},
     {
-      src: "https://github.com/user-attachments/assets/1093641c-4220-4982-806b-4cc46b5541ba",
-      label: "Dashboard"
-    },
-    {
-      src: "https://github.com/user-attachments/assets/63034e5a-9ce5-4e61-b613-144a6cea057f",
-      label: "Cards Module"
-    },
-    {
-      src: "https://github.com/user-attachments/assets/aa3097e3-6b21-468a-9d87-f20c604e9791",
-      label: "Loans Module"
-    }
+  src: "images/dbs-dashboard.png",
+  label: "Dashboard"
+},
+{
+  src: "images/dbs-cards.png",
+  label: "Cards Module"
+},
+{
+  src: "images/dbs-loans.png",
+  label: "Loans Module"
+}
   ],
-    mybank: [
-    {
-        src: "https://github.com/user-attachments/assets/ab9b7045-d44c-45ba-95bd-ef8dbbc8f78f",
-        label: "Login Page"
-    },
-    {
-        src: "https://github.com/user-attachments/assets/b6cf58a9-2a9a-424e-8191-4e3fb06d4d7d",
-        label: "Banking Dashboard"
-    }
+   mybank: [
+{
+src:"images/mybank-login.png",
+label:"Login Page"
+},
+{
+src:"images/mybank-dashboard.png",
+label:"Banking Dashboard"
+}
 ],
-    smart: [
-    {
-        src: "https://github.com/user-attachments/assets/67e71a76-5188-4c6c-8357-97849ce40d3b",
-        label: "Home Page"
-    },
-    {
-        src: "https://github.com/user-attachments/assets/58e3e531-e92c-47dc-81f8-384ede153b83",
-        label: "Login Page"
-    },
-    {
-        src: "https://github.com/user-attachments/assets/3af8be03-5a9d-4b65-9df4-0987ce947328",
-        label: "Dashboard"
-    },
-    {
-        src: "https://github.com/user-attachments/assets/3ba04cd6-a27f-483d-8662-3d2c42a36f0c",
-        label: "Booking Form"
-    },
-    {
-        src: "https://github.com/user-attachments/assets/db2b7532-8503-4d04-9b7a-b25b19d2393b",
-        label: "Booking History"
-    },
-    {
-        src: "https://github.com/user-attachments/assets/c41f37b3-001a-45b9-8c9d-da4111d23cf4",
-        label: "Technician Tracking"
-    }
+smart: [
+{
+src:"images/smart-home.png",
+label:"Home Page"
+},
+{
+src:"images/smart-login.png",
+label:"Login Page"
+},
+{
+src:"images/smart-dashboard.png",
+label:"Dashboard"
+},
+{
+src:"images/smart-booking.png",
+label:"Booking Form"
+},
+{
+src:"images/smart-history.png",
+label:"Booking History"
+},
+{
+src:"images/smart-tracking.png",
+label:"Technician Tracking"
+}
 ]
+  
   };
   const TITLES = {dbs:'Digital Banking System', mybank:'MyBank', smart:'Smart Service Booking'};
 
