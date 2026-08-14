@@ -349,9 +349,16 @@
       <div class="entry-status status-demo">Demonstration Mode</div>
     </div>
     <div class="entry-venue">A microservices platform for enterprise telemetry and AI-assisted incident diagnosis</div>
+    <div class="entry-img-wrap" onclick="lbOpen('nexus')">
+      <img src="images/nexus-overview.png" alt="Nexus Ops" loading="lazy" />
+      <div class="entry-img-overlay"><span>View Gallery</span></div>
+    </div>
     <p class="entry-abstract">A modular observability platform built as Spring Boot microservices behind an API Gateway with service discovery — dashboards for logs, metrics, distributed traces, and incident lifecycle management with SLA/MTTR reporting. The AI Root Cause and Chat Assistant modules implement a designed pipeline (telemetry → embedding → Qdrant vector search → AI analysis → root-cause hypothesis), presently demonstrated on simulated data pending connection to a live AI backend.</p>
     <div class="entry-keywords"><b>Keywords —</b> Java, Spring Boot, Spring Cloud, Microservices, Docker, React, TypeScript</div>
-    <div class="entry-links"><a href="https://github.com/shubham-sharma-03/nexus-ops-ai-observability" target="_blank">Repository</a></div>
+    <div class="entry-links">
+      <button class="btn-gallery" onclick="lbOpen('nexus')">⊞ Screenshots (6)</button>
+      <a href="https://github.com/shubham-sharma-03/nexus-ops-ai-observability" target="_blank">Repository</a>
+    </div>
   </div>
 
   <div class="entry">
@@ -490,9 +497,17 @@
       { src: "images/smart-booking.png",   label: "Booking Form" },
       { src: "images/smart-history.png",   label: "Booking History" },
       { src: "images/smart-tracking.png",  label: "Technician Tracking" }
+    ],
+    nexus: [
+      { src: "images/nexus-login.png",         label: "Sign In" },
+      { src: "images/nexus-overview.png",      label: "Observability Command Center" },
+      { src: "images/nexus-incidents.png",     label: "Incident Workspace" },
+      { src: "images/nexus-ai-root-cause.png", label: "AI Root Cause Analysis" },
+      { src: "images/nexus-metrics.png",       label: "Time-Series Metrics" },
+      { src: "images/nexus-logs.png",          label: "Log Explorer" }
     ]
   };
-  const TITLES = {dbs:'Digital Banking System', mybank:'MyBank', smart:'Smart Service Booking'};
+  const TITLES = {dbs:'Digital Banking System', mybank:'MyBank', smart:'Smart Service Booking', nexus:'Nexus Ops'};
 
   let cur = [], idx = 0;
 
