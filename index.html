@@ -3,551 +3,2526 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Shubham Sharma — Curriculum Vitae</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --paper:#F6F1E6;
-    --paper-2:#EFE8D9;
-    --ink:#1C1811;
-    --ink-soft:#4A4238;
-    --muted:#8A8070;
-    --crimson:#7A1128;
-    --crimson-soft:#9C2E45;
-    --navy:#1E2A44;
-    --gold:#A9843F;
-    --rule:#D6CCB4;
-    --font-display:'Libre Baskerville',serif;
-    --font-body:'EB Garamond',serif;
-    --font-label:'Inter',sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--font-body);
-    font-size:18px;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;text-decoration:none;}
-  .wrap{max-width:900px;margin:0 auto;padding:0 40px;}
-  .label{
-    font-family:var(--font-label);font-size:11px;letter-spacing:0.16em;
-    text-transform:uppercase;color:var(--muted);
-  }
-  .rule{border:none;border-top:1px solid var(--rule);}
-  .rule-thick{border:none;border-top:2px solid var(--ink);}
 
-  /* NAV */
-  nav{
-    position:sticky;top:0;z-index:50;
-    background:rgba(246,241,230,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--rule);
-  }
-  .nav-inner{
-    max-width:900px;margin:0 auto;padding:16px 40px;
-    display:flex;justify-content:space-between;align-items:center;
-  }
-  .nav-mark{font-family:var(--font-display);font-size:15px;font-weight:700;letter-spacing:0.02em;color:var(--crimson);}
-  .nav-links{display:flex;gap:30px;list-style:none;}
-  .nav-links a{
-    font-family:var(--font-label);font-size:11px;letter-spacing:0.12em;
-    text-transform:uppercase;color:var(--ink-soft);transition:color .2s;
-  }
-  .nav-links a:hover{color:var(--crimson);}
-  @media(max-width:640px){.nav-links{display:none;}}
+:root{
+  --paper:#F6F1E6;
+  --paper-2:#EFE8D9;
+  --ink:#1C1811;
+  --ink-soft:#4A4238;
+  --muted:#8A8070;
+  --crimson:#7A1128;
+  --crimson-soft:#9C2E45;
+  --navy:#1E2A44;
+  --gold:#A9843F;
+  --rule:#D6CCB4;
 
-  /* SEAL */
-  .seal{width:86px;height:86px;margin:0 auto 28px;}
-  .seal svg{width:100%;height:100%;}
+  --font-display:'Libre Baskerville',serif;
+  --font-body:'EB Garamond',serif;
+  --font-label:'Inter',sans-serif;
+}
 
-  /* HERO */
-  .hero{padding:72px 0 56px;text-align:center;}
-  .hero-badge{
-    display:inline-flex;align-items:center;gap:8px;
-    font-family:var(--font-label);font-size:11px;letter-spacing:0.08em;
-    text-transform:uppercase;color:var(--ink-soft);
-    padding:7px 16px;border:1px solid var(--gold);border-radius:20px;
-    margin-bottom:26px;
-  }
-  .hero-badge .pulse{
-    width:6px;height:6px;border-radius:50%;background:#3D7A4F;
-    box-shadow:0 0 6px rgba(61,122,79,0.6);
-  }
-  .hero-kicker{
-    font-family:var(--font-label);font-size:11px;letter-spacing:0.22em;
-    text-transform:uppercase;color:var(--gold);margin-bottom:18px;
-  }
-  h1.hero-name{
-    font-family:var(--font-display);
-    font-size:clamp(38px,6vw,58px);
-    font-weight:700;
-    letter-spacing:0.01em;
-    margin-bottom:14px;
-  }
-  .hero-title{
-    font-family:var(--font-body);font-style:italic;font-size:20px;
-    color:var(--ink-soft);margin-bottom:26px;
-  }
-  .hero-desc{
-    max-width:600px;margin:0 auto 34px;color:var(--ink-soft);font-size:17px;
-  }
-  .hero-links{
-    font-family:var(--font-label);font-size:11.5px;letter-spacing:0.08em;
-    text-transform:uppercase;color:var(--crimson);
-    display:flex;gap:28px;justify-content:center;flex-wrap:wrap;
-  }
-  .hero-links a{border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;}
-  .hero-links a:hover{border-color:var(--crimson);}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-  /* CREDENTIALS STRIP */
-  .credentials{
-    display:flex;justify-content:center;gap:0;
-    margin-top:44px;padding-top:26px;
-    flex-wrap:wrap;
-  }
-  .cred{
-    text-align:center;padding:0 34px;border-left:1px solid var(--rule);
-  }
-  .cred:first-child{border-left:none;}
-  .cred-num{font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--crimson);}
-  .cred-label{font-family:var(--font-label);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+html{
+  scroll-behavior:smooth;
+}
 
-  /* SECTION FRAME */
-  section{padding:64px 0;}
-  .sec-num{
-    font-family:var(--font-display);font-style:italic;font-size:15px;
-    color:var(--gold);margin-bottom:6px;
-  }
-  .sec-title{
-    font-family:var(--font-display);font-size:29px;font-weight:700;
-    margin-bottom:36px;padding-bottom:16px;border-bottom:2px solid var(--ink);
-  }
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:18px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
 
-  /* PROFILE / EDUCATION */
-  .edu-entry{display:grid;grid-template-columns:1fr auto;gap:20px;margin-bottom:22px;}
-  .edu-degree{font-family:var(--font-display);font-size:19px;font-weight:700;}
-  .edu-inst{font-style:italic;color:var(--ink-soft);margin-top:2px;}
-  .edu-course{font-family:var(--font-label);font-size:12px;color:var(--muted);letter-spacing:0.02em;margin-top:10px;line-height:1.9;}
-  .edu-dates{font-family:var(--font-label);font-size:12px;color:var(--muted);white-space:nowrap;text-align:right;}
-  .edu-gpa{font-family:var(--font-label);font-size:12px;color:var(--crimson);margin-top:4px;text-align:right;}
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
-  /* SKILLS */
-  .skills-table{width:100%;border-collapse:collapse;}
-  .skills-table tr{border-top:1px solid var(--rule);}
-  .skills-table tr:first-child{border-top:none;}
-  .skills-table td{padding:14px 0;vertical-align:top;}
-  .skills-table td:first-child{
-    font-family:var(--font-label);font-size:11px;letter-spacing:0.1em;
-    text-transform:uppercase;color:var(--crimson);width:210px;
-  }
-  .skills-table td:last-child{color:var(--ink-soft);}
+.wrap{
+  max-width:900px;
+  margin:0 auto;
+  padding:0 40px;
+}
 
-  /* PROJECTS AS ENTRIES */
-  .entry{padding-bottom:30px;}
-  .entry + .entry{border-top:1px solid var(--rule);padding-top:30px;}
-  .entry-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px;}
-  .entry-title{font-family:var(--font-display);font-size:21px;font-weight:700;}
-  .entry-status{
-    font-family:var(--font-label);font-size:10px;letter-spacing:0.1em;
-    text-transform:uppercase;white-space:nowrap;
-  }
-  .status-live{color:#3D7A4F;}
-  .status-demo{color:var(--gold);}
-  .status-built{color:var(--muted);}
-  .entry-status::before{content:'● ';font-size:8px;}
-  .entry-venue{font-style:italic;color:var(--ink-soft);font-size:15.5px;margin-bottom:12px;}
-  .entry-abstract{color:var(--ink-soft);margin-bottom:14px;}
-  .entry-keywords{font-family:var(--font-label);font-size:11.5px;color:var(--muted);margin-bottom:12px;}
-  .entry-keywords b{color:var(--ink-soft);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;font-size:10.5px;}
-  .entry-links{font-family:var(--font-label);font-size:11.5px;letter-spacing:0.04em;text-transform:uppercase;}
-  .entry-links a{color:var(--crimson);margin-right:22px;border-bottom:1px solid transparent;}
-  .entry-links a:hover{border-color:var(--crimson);}
+.label{
+  font-family:var(--font-label);
+  font-size:11px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
 
-  /* GALLERY THUMB + LIGHTBOX */
-  .entry-img-wrap{
-    width:100%;aspect-ratio:16/9;margin-bottom:16px;
-    border:1px solid var(--rule);overflow:hidden;background:var(--panel-2,#EFE8D9);
-    cursor:pointer;position:relative;
-  }
-  .entry-img-wrap img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .4s ease;}
-  .entry-img-wrap:hover img{transform:scale(1.03);}
-  .entry-img-overlay{position:absolute;inset:0;background:rgba(26,24,17,0);display:flex;align-items:center;justify-content:center;transition:background .3s;}
-  .entry-img-wrap:hover .entry-img-overlay{background:rgba(26,24,17,0.45);}
-  .entry-img-overlay span{
-    font-family:var(--font-label);font-size:11px;font-weight:600;letter-spacing:0.12em;
-    text-transform:uppercase;color:#fff;opacity:0;transition:opacity .3s;
-  }
-  .entry-img-wrap:hover .entry-img-overlay span{opacity:1;}
-  .btn-gallery{
-    display:inline-flex;align-items:center;gap:6px;
-    font-family:var(--font-label);font-size:10.5px;font-weight:600;letter-spacing:0.08em;
-    text-transform:uppercase;color:var(--navy,#1E2A44);background:none;
-    border:1px solid var(--navy,#1E2A44);padding:6px 13px;cursor:pointer;
-    margin-right:16px;transition:all .2s;
-  }
-  .btn-gallery:hover{background:var(--navy,#1E2A44);color:#fff;}
+.rule{
+  border:none;
+  border-top:1px solid var(--rule);
+}
 
-  .lb-overlay{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,8,6,0.96);align-items:center;justify-content:center;padding:24px;}
-  .lb-overlay.open{display:flex;}
-  .lb-box{position:relative;width:95vw;max-width:1100px;display:flex;flex-direction:column;align-items:center;gap:16px;}
-  .lb-top{width:100%;display:flex;justify-content:space-between;align-items:center;}
-  .lb-title{font-family:var(--font-display);font-size:17px;font-style:italic;color:rgba(255,255,255,0.75);}
-  .lb-close{background:none;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.65);font-family:var(--font-label);font-size:10.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:7px 16px;cursor:pointer;transition:all .2s;}
-  .lb-close:hover{border-color:var(--gold);color:var(--gold);}
-  .lb-img-wrap{width:100%;border:1px solid rgba(255,255,255,0.1);overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center;min-height:200px;}
-  .lb-img-wrap img{width:100%;height:auto;display:block;max-width:100%;max-height:74vh;object-fit:contain;}
-  .lb-bottom{width:100%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-  .lb-caption{font-family:var(--font-label);font-size:10.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);}
-  .lb-nav{display:flex;align-items:center;gap:14px;}
-  .lb-btn{background:none;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.65);font-family:var(--font-label);font-size:10.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:7px 16px;cursor:pointer;transition:all .2s;}
-  .lb-btn:hover{border-color:var(--gold);color:var(--gold);}
-  .lb-btn:disabled{opacity:0.2;cursor:default;}
-  .lb-counter{font-family:var(--font-display);font-size:15px;font-style:italic;color:rgba(255,255,255,0.4);min-width:50px;text-align:center;}
-  .lb-dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;}
-  .lb-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.25);cursor:pointer;border:none;transition:background .2s;padding:0;}
-  .lb-dot.active{background:var(--gold);}
+.rule-thick{
+  border:none;
+  border-top:2px solid var(--ink);
+}
 
-  /* HONORS / CERTS */
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
-  @media(max-width:640px){.two-col{grid-template-columns:1fr;gap:36px;}}
-  .honor-item{display:flex;gap:16px;padding-bottom:16px;}
-  .honor-item + .honor-item{border-top:1px solid var(--rule);padding-top:16px;}
-  .honor-mark{font-family:var(--font-display);font-style:italic;color:var(--gold);flex-shrink:0;}
-  .cert-entry{padding-bottom:14px;}
-  .cert-entry + .cert-entry{border-top:1px solid var(--rule);padding-top:14px;}
-  .cert-name{font-weight:600;}
-  .cert-org{font-family:var(--font-label);font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:3px;}
 
-  /* CLOSING */
-  .closing{text-align:center;padding:80px 0 40px;border-bottom:none;}
-  .closing-mark{font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--gold);margin-bottom:12px;}
-  .closing-title{font-family:var(--font-display);font-size:clamp(30px,4.5vw,44px);font-weight:700;margin-bottom:16px;}
-  .closing-sub{font-family:var(--font-label);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:34px;}
-  .closing-links{
-    font-family:var(--font-label);font-size:11.5px;letter-spacing:0.08em;
-    text-transform:uppercase;color:var(--crimson);
-    display:flex;gap:30px;justify-content:center;flex-wrap:wrap;
+/* =========================
+   NAV
+========================= */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(246,241,230,0.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);
+}
+
+.nav-inner{
+  max-width:900px;
+  margin:0 auto;
+  padding:16px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.nav-mark{
+  font-family:var(--font-display);
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:0.02em;
+  color:var(--crimson);
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+.nav-links a{
+  font-family:var(--font-label);
+  font-size:11px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  transition:color .2s;
+}
+
+.nav-links a:hover{
+  color:var(--crimson);
+}
+
+@media(max-width:640px){
+  .nav-links{
+    display:none;
   }
-  .closing-links a{border-bottom:1px solid transparent;padding-bottom:2px;}
-  .closing-links a:hover{border-color:var(--crimson);}
-  footer{
-    font-family:var(--font-label);font-size:10.5px;letter-spacing:0.1em;
-    text-transform:uppercase;color:var(--muted);text-align:center;padding:26px 0 40px;
+}
+
+
+/* =========================
+   SEAL
+========================= */
+
+.seal{
+  width:86px;
+  height:86px;
+  margin:0 auto 28px;
+}
+
+.seal svg{
+  width:100%;
+  height:100%;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  padding:72px 0 56px;
+  text-align:center;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  font-family:var(--font-label);
+  font-size:11px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+
+  padding:7px 16px;
+  border:1px solid var(--gold);
+  border-radius:20px;
+
+  margin-bottom:26px;
+}
+
+.hero-badge .pulse{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#3D7A4F;
+  box-shadow:0 0 6px rgba(61,122,79,0.6);
+}
+
+.hero-kicker{
+  font-family:var(--font-label);
+  font-size:11px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+
+h1.hero-name{
+  font-family:var(--font-display);
+  font-size:clamp(38px,6vw,58px);
+  font-weight:700;
+  letter-spacing:0.01em;
+  margin-bottom:14px;
+}
+
+.hero-title{
+  font-family:var(--font-body);
+  font-style:italic;
+  font-size:20px;
+  color:var(--ink-soft);
+  margin-bottom:26px;
+}
+
+.hero-desc{
+  max-width:600px;
+  margin:0 auto 34px;
+  color:var(--ink-soft);
+  font-size:17px;
+}
+
+.hero-links{
+  font-family:var(--font-label);
+  font-size:11.5px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--crimson);
+
+  display:flex;
+  gap:28px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.hero-links a{
+  border-bottom:1px solid transparent;
+  padding-bottom:2px;
+  transition:border-color .2s;
+}
+
+.hero-links a:hover{
+  border-color:var(--crimson);
+}
+
+
+/* =========================
+   CREDENTIALS
+========================= */
+
+.credentials{
+  display:flex;
+  justify-content:center;
+  gap:0;
+  margin-top:44px;
+  padding-top:26px;
+  flex-wrap:wrap;
+}
+
+.cred{
+  text-align:center;
+  padding:0 34px;
+  border-left:1px solid var(--rule);
+}
+
+.cred:first-child{
+  border-left:none;
+}
+
+.cred-num{
+  font-family:var(--font-display);
+  font-size:24px;
+  font-weight:700;
+  color:var(--crimson);
+}
+
+.cred-label{
+  font-family:var(--font-label);
+  font-size:10px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+  padding:64px 0;
+}
+
+.sec-num{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:15px;
+  color:var(--gold);
+  margin-bottom:6px;
+}
+
+.sec-title{
+  font-family:var(--font-display);
+  font-size:29px;
+  font-weight:700;
+  margin-bottom:36px;
+  padding-bottom:16px;
+  border-bottom:2px solid var(--ink);
+}
+
+
+/* =========================
+   EDUCATION
+========================= */
+
+.edu-entry{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:20px;
+  margin-bottom:22px;
+}
+
+.edu-degree{
+  font-family:var(--font-display);
+  font-size:19px;
+  font-weight:700;
+}
+
+.edu-inst{
+  font-style:italic;
+  color:var(--ink-soft);
+  margin-top:2px;
+}
+
+.edu-course{
+  font-family:var(--font-label);
+  font-size:12px;
+  color:var(--muted);
+  letter-spacing:0.02em;
+  margin-top:10px;
+  line-height:1.9;
+}
+
+.edu-dates{
+  font-family:var(--font-label);
+  font-size:12px;
+  color:var(--muted);
+  white-space:nowrap;
+  text-align:right;
+}
+
+.edu-gpa{
+  font-family:var(--font-label);
+  font-size:12px;
+  color:var(--crimson);
+  margin-top:4px;
+  text-align:right;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.skills-table tr{
+  border-top:1px solid var(--rule);
+}
+
+.skills-table tr:first-child{
+  border-top:none;
+}
+
+.skills-table td{
+  padding:14px 0;
+  vertical-align:top;
+}
+
+.skills-table td:first-child{
+  font-family:var(--font-label);
+  font-size:11px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--crimson);
+  width:210px;
+}
+
+.skills-table td:last-child{
+  color:var(--ink-soft);
+}
+
+
+/* =========================
+   PROJECT ENTRIES
+========================= */
+
+.entry{
+  padding-bottom:30px;
+}
+
+.entry + .entry{
+  border-top:1px solid var(--rule);
+  padding-top:30px;
+}
+
+.entry-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:6px;
+}
+
+.entry-title{
+  font-family:var(--font-display);
+  font-size:21px;
+  font-weight:700;
+}
+
+.entry-status{
+  font-family:var(--font-label);
+  font-size:10px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.status-live{
+  color:#3D7A4F;
+}
+
+.status-demo{
+  color:var(--gold);
+}
+
+.status-built{
+  color:var(--muted);
+}
+
+.entry-status::before{
+  content:'● ';
+  font-size:8px;
+}
+
+.entry-venue{
+  font-style:italic;
+  color:var(--ink-soft);
+  font-size:15.5px;
+  margin-bottom:12px;
+}
+
+.entry-abstract{
+  color:var(--ink-soft);
+  margin-bottom:14px;
+}
+
+.entry-keywords{
+  font-family:var(--font-label);
+  font-size:11.5px;
+  color:var(--muted);
+  margin-bottom:12px;
+}
+
+.entry-keywords b{
+  color:var(--ink-soft);
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  font-size:10.5px;
+}
+
+.entry-links{
+  font-family:var(--font-label);
+  font-size:11.5px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+
+.entry-links a{
+  color:var(--crimson);
+  margin-right:22px;
+  border-bottom:1px solid transparent;
+}
+
+.entry-links a:hover{
+  border-color:var(--crimson);
+}
+
+
+/* =========================
+   IMAGE GALLERY
+========================= */
+
+.entry-img-wrap{
+  width:100%;
+  aspect-ratio:16/9;
+  margin-bottom:16px;
+
+  border:1px solid var(--rule);
+  overflow:hidden;
+  background:var(--panel-2,#EFE8D9);
+
+  cursor:pointer;
+  position:relative;
+}
+
+.entry-img-wrap img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform .4s ease;
+}
+
+.entry-img-wrap:hover img{
+  transform:scale(1.03);
+}
+
+.entry-img-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(26,24,17,0);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:background .3s;
+}
+
+.entry-img-wrap:hover .entry-img-overlay{
+  background:rgba(26,24,17,0.45);
+}
+
+.entry-img-overlay span{
+  font-family:var(--font-label);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:#fff;
+  opacity:0;
+  transition:opacity .3s;
+}
+
+.entry-img-wrap:hover .entry-img-overlay span{
+  opacity:1;
+}
+
+.btn-gallery{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+
+  font-family:var(--font-label);
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+
+  color:var(--navy,#1E2A44);
+  background:none;
+
+  border:1px solid var(--navy,#1E2A44);
+  padding:6px 13px;
+
+  cursor:pointer;
+  margin-right:16px;
+
+  transition:all .2s;
+}
+
+.btn-gallery:hover{
+  background:var(--navy,#1E2A44);
+  color:#fff;
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lb-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:999;
+
+  background:rgba(10,8,6,0.96);
+
+  align-items:center;
+  justify-content:center;
+
+  padding:24px;
+}
+
+.lb-overlay.open{
+  display:flex;
+}
+
+.lb-box{
+  position:relative;
+  width:95vw;
+  max-width:1100px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  gap:16px;
+}
+
+.lb-top{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.lb-title{
+  font-family:var(--font-display);
+  font-size:17px;
+  font-style:italic;
+  color:rgba(255,255,255,0.75);
+}
+
+.lb-close{
+  background:none;
+  border:1px solid rgba(255,255,255,0.25);
+
+  color:rgba(255,255,255,0.65);
+
+  font-family:var(--font-label);
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+
+  padding:7px 16px;
+
+  cursor:pointer;
+  transition:all .2s;
+}
+
+.lb-close:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+
+.lb-img-wrap{
+  width:100%;
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  overflow:hidden;
+
+  background:#000;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:200px;
+}
+
+.lb-img-wrap img{
+  width:100%;
+  height:auto;
+
+  display:block;
+
+  max-width:100%;
+  max-height:74vh;
+
+  object-fit:contain;
+}
+
+.lb-bottom{
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  flex-wrap:wrap;
+
+  gap:12px;
+}
+
+.lb-caption{
+  font-family:var(--font-label);
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+
+  color:var(--gold);
+}
+
+.lb-nav{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.lb-btn{
+  background:none;
+  border:1px solid rgba(255,255,255,0.25);
+
+  color:rgba(255,255,255,0.65);
+
+  font-family:var(--font-label);
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+
+  padding:7px 16px;
+
+  cursor:pointer;
+  transition:all .2s;
+}
+
+.lb-btn:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+
+.lb-btn:disabled{
+  opacity:0.2;
+  cursor:default;
+}
+
+.lb-counter{
+  font-family:var(--font-display);
+  font-size:15px;
+  font-style:italic;
+  color:rgba(255,255,255,0.4);
+
+  min-width:50px;
+  text-align:center;
+}
+
+.lb-dots{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.lb-dot{
+  width:6px;
+  height:6px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.25);
+
+  cursor:pointer;
+  border:none;
+
+  transition:background .2s;
+  padding:0;
+}
+
+.lb-dot.active{
+  background:var(--gold);
+}
+
+
+/* =========================
+   HONORS / CERTIFICATIONS
+========================= */
+
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+
+@media(max-width:640px){
+  .two-col{
+    grid-template-columns:1fr;
+    gap:36px;
   }
+}
+
+.honor-item{
+  display:flex;
+  gap:16px;
+  padding-bottom:16px;
+}
+
+.honor-item + .honor-item{
+  border-top:1px solid var(--rule);
+  padding-top:16px;
+}
+
+.honor-mark{
+  font-family:var(--font-display);
+  font-style:italic;
+  color:var(--gold);
+  flex-shrink:0;
+}
+
+.cert-entry{
+  padding-bottom:14px;
+}
+
+.cert-entry + .cert-entry{
+  border-top:1px solid var(--rule);
+  padding-top:14px;
+}
+
+.cert-name{
+  font-weight:600;
+}
+
+.cert-org{
+  font-family:var(--font-label);
+  font-size:11.5px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin-top:3px;
+}
+
+
+/* =========================
+   CLOSING
+========================= */
+
+.closing{
+  text-align:center;
+  padding:80px 0 40px;
+  border-bottom:none;
+}
+
+.closing-mark{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:15px;
+  color:var(--gold);
+  margin-bottom:12px;
+}
+
+.closing-title{
+  font-family:var(--font-display);
+  font-size:clamp(30px,4.5vw,44px);
+  font-weight:700;
+  margin-bottom:16px;
+}
+
+.closing-sub{
+  font-family:var(--font-label);
+  font-size:12px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:34px;
+}
+
+.closing-links{
+  font-family:var(--font-label);
+  font-size:11.5px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--crimson);
+
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.closing-links a{
+  border-bottom:1px solid transparent;
+  padding-bottom:2px;
+}
+
+.closing-links a:hover{
+  border-color:var(--crimson);
+}
+
+footer{
+  font-family:var(--font-label);
+  font-size:10.5px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-align:center;
+  padding:26px 0 40px;
+}
+
 </style>
 </head>
+
+
 <body>
 
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
+
   <div class="nav-inner">
-    <div class="nav-mark">S. Sharma</div>
+
+    <div class="nav-mark">
+      S. Sharma
+    </div>
+
     <ul class="nav-links">
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#focus">Focus</a></li>
-      <li><a href="#work">Research &amp; Projects</a></li>
-      <li><a href="#honors">Honors</a></li>
-      <li><a href="Shubham_Sharma_Resume.pdf" target="_blank">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
+
+      <li>
+        <a href="#profile">
+          Profile
+        </a>
+      </li>
+
+      <li>
+        <a href="#focus">
+          Focus
+        </a>
+      </li>
+
+      <li>
+        <a href="#work">
+          Research &amp; Projects
+        </a>
+      </li>
+
+      <li>
+        <a href="#honors">
+          Honors
+        </a>
+      </li>
+
+      <li>
+        <a href="Shubham_Sharma_Resume.pdf" target="_blank">
+          Resume
+        </a>
+      </li>
+
+      <li>
+        <a href="#contact">
+          Contact
+        </a>
+      </li>
+
     </ul>
+
   </div>
+
 </nav>
 
+
+
+<!-- =========================
+     HERO
+========================= -->
+
 <header class="hero wrap">
+
   <div class="seal">
-    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="47" stroke="#7A1128" stroke-width="1.5"/>
-      <circle cx="50" cy="50" r="40" stroke="#A9843F" stroke-width="1"/>
-      <text x="50" y="58" text-anchor="middle" font-family="Libre Baskerville, serif" font-size="30" font-weight="700" fill="#1C1811">SS</text>
-      <path d="M20 50 A30 30 0 0 1 80 50" stroke="#7A1128" stroke-width="0.75" fill="none" stroke-dasharray="2 3"/>
-      <path d="M20 50 A30 30 0 0 0 80 50" stroke="#7A1128" stroke-width="0.75" fill="none" stroke-dasharray="2 3"/>
+
+    <svg
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+
+      <circle
+        cx="50"
+        cy="50"
+        r="47"
+        stroke="#7A1128"
+        stroke-width="1.5"
+      />
+
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+        stroke="#A9843F"
+        stroke-width="1"
+      />
+
+      <text
+        x="50"
+        y="58"
+        text-anchor="middle"
+        font-family="Libre Baskerville, serif"
+        font-size="30"
+        font-weight="700"
+        fill="#1C1811"
+      >
+        SS
+      </text>
+
+      <path
+        d="M20 50 A30 30 0 0 1 80 50"
+        stroke="#7A1128"
+        stroke-width="0.75"
+        fill="none"
+        stroke-dasharray="2 3"
+      />
+
+      <path
+        d="M20 50 A30 30 0 0 0 80 50"
+        stroke="#7A1128"
+        stroke-width="0.75"
+        fill="none"
+        stroke-dasharray="2 3"
+      />
+
     </svg>
+
   </div>
-  <div class="hero-badge"><span class="pulse"></span> Open to Backend Engineering Roles</div>
-  <div class="hero-kicker">Curriculum Vitae</div>
-  <h1 class="hero-name">Shubham Sharma</h1>
-  <div class="hero-title">Candidate in Software &amp; Backend Engineering</div>
+
+
+  <div class="hero-badge">
+
+    <span class="pulse"></span>
+
+    Open to Backend Engineering Roles
+
+  </div>
+
+
+  <div class="hero-kicker">
+    Curriculum Vitae
+  </div>
+
+
+  <h1 class="hero-name">
+    Shubham Sharma
+  </h1>
+
+
+  <div class="hero-title">
+    Candidate in Software &amp; Backend Engineering
+  </div>
+
+
   <p class="hero-desc">
-    I design and build distributed backend systems in the discipline of fintech and enterprise software — microservices, event-driven architecture, and security-first APIs. Reading for a B.E. in Electronics &amp; Telecommunication Engineering, Class of 2026, University of Mumbai.
+
+    I design and build distributed backend systems in the discipline of fintech
+    and enterprise software — microservices, event-driven architecture, and
+    security-first APIs. Reading for a B.E. in Electronics &amp;
+    Telecommunication Engineering, Class of 2026, University of Mumbai.
+
   </p>
+
+
   <div class="hero-links">
-    <a href="Shubham_Sharma_Resume.pdf" target="_blank">Resume</a>
-    <a href="https://github.com/shubham-sharma-03" target="_blank">GitHub</a>
-    <a href="mailto:sharmashubham05275@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/shubhamsharma2004" target="_blank">LinkedIn</a>
+
+    <a href="Shubham_Sharma_Resume.pdf" target="_blank">
+      Resume
+    </a>
+
+    <a
+      href="https://github.com/shubham-sharma-03"
+      target="_blank"
+    >
+      GitHub
+    </a>
+
+    <a href="mailto:sharmashubham05275@gmail.com">
+      Email
+    </a>
+
+    <a
+      href="https://linkedin.com/in/shubhamsharma2004"
+      target="_blank"
+    >
+      LinkedIn
+    </a>
+
   </div>
+
 
   <div class="credentials">
-    <div class="cred"><div class="cred-num">6</div><div class="cred-label">Projects Completed</div></div>
-    <div class="cred"><div class="cred-num">45+</div><div class="cred-label">REST Endpoints Built</div></div>
-    <div class="cred"><div class="cred-num">3</div><div class="cred-label">Microservices Platforms</div></div>
-    <div class="cred"><div class="cred-num">200+</div><div class="cred-label">DSA Problems Solved</div></div>
+
+    <div class="cred">
+      <div class="cred-num">6</div>
+      <div class="cred-label">Projects Completed</div>
+    </div>
+
+    <div class="cred">
+      <div class="cred-num">45+</div>
+      <div class="cred-label">REST Endpoints Built</div>
+    </div>
+
+    <div class="cred">
+      <div class="cred-num">3</div>
+      <div class="cred-label">Microservices Platforms</div>
+    </div>
+
+    <div class="cred">
+      <div class="cred-num">200+</div>
+      <div class="cred-label">DSA Problems Solved</div>
+    </div>
+
   </div>
+
 </header>
 
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
 <section id="profile" class="wrap">
-  <h2 class="sec-title">Education</h2>
+
+  <h2 class="sec-title">
+    Education
+  </h2>
+
+
   <div class="edu-entry">
+
     <div>
-      <div class="edu-degree">Bachelor of Engineering, Electronics &amp; Telecommunication</div>
-      <div class="edu-inst">Atharva College of Engineering, University of Mumbai</div>
-      <div class="edu-course">Data Structures &amp; Algorithms &nbsp;·&nbsp; Object-Oriented Programming &nbsp;·&nbsp; Database Management Systems &nbsp;·&nbsp; Operating Systems &nbsp;·&nbsp; Computer Networks &nbsp;·&nbsp; Software Engineering</div>
+
+      <div class="edu-degree">
+        Bachelor of Engineering, Electronics &amp; Telecommunication
+      </div>
+
+      <div class="edu-inst">
+        Atharva College of Engineering, University of Mumbai
+      </div>
+
+      <div class="edu-course">
+        Data Structures &amp; Algorithms
+        &nbsp;·&nbsp;
+        Object-Oriented Programming
+        &nbsp;·&nbsp;
+        Database Management Systems
+        &nbsp;·&nbsp;
+        Operating Systems
+        &nbsp;·&nbsp;
+        Computer Networks
+        &nbsp;·&nbsp;
+        Software Engineering
+      </div>
+
     </div>
+
+
     <div>
-      <div class="edu-dates">2022 — 2026</div>
-      <div class="edu-gpa">CGPA 7.25</div>
+
+      <div class="edu-dates">
+        2022 — 2026
+      </div>
+
+      <div class="edu-gpa">
+        CGPA 7.25
+      </div>
+
     </div>
+
   </div>
+
 </section>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
 
 <section id="focus" class="wrap">
-  <h2 class="sec-title">Areas of Focus</h2>
+
+  <h2 class="sec-title">
+    Areas of Focus
+  </h2>
+
+
   <table class="skills-table">
-    <tr><td>Languages</td><td>Java, SQL, Python, JavaScript</td></tr>
-    <tr><td>Backend</td><td>Spring Boot, Spring Security, Spring Cloud, Spring Data JPA, Hibernate, FastAPI, REST APIs</td></tr>
-    <tr><td>Distributed Systems</td><td>Microservices, API Gateway, Service Discovery, Apache Kafka, OpenFeign, Resilience4j, Event-Driven Architecture</td></tr>
-    <tr><td>Databases &amp; Caching</td><td>PostgreSQL, MySQL, Redis</td></tr>
-    <tr><td>Security</td><td>JWT, Role-Based Access Control, Authentication, Authorization</td></tr>
-    <tr><td>Tools</td><td>Git, GitHub, Docker, Maven, Postman, Linux, IntelliJ IDEA</td></tr>
-    <tr><td>Testing &amp; Method</td><td>JUnit 5, Mockito, OOP, SOLID Principles, Design Patterns, MVC</td></tr>
-    <tr><td>Cloud (Familiar)</td><td>AWS (EC2, S3, RDS), Kubernetes, CI/CD</td></tr>
+
+    <tr>
+      <td>Languages</td>
+      <td>
+        Java, SQL, Python, JavaScript
+      </td>
+    </tr>
+
+    <tr>
+      <td>Backend</td>
+      <td>
+        Spring Boot, Spring Security, Spring Cloud,
+        Spring Data JPA, Hibernate, FastAPI, REST APIs
+      </td>
+    </tr>
+
+    <tr>
+      <td>Distributed Systems</td>
+      <td>
+        Microservices, API Gateway, Service Discovery,
+        Apache Kafka, OpenFeign, Resilience4j,
+        Event-Driven Architecture
+      </td>
+    </tr>
+
+    <tr>
+      <td>Databases &amp; Caching</td>
+      <td>
+        PostgreSQL, MySQL, Redis
+      </td>
+    </tr>
+
+    <tr>
+      <td>Security</td>
+      <td>
+        JWT, Role-Based Access Control,
+        Authentication, Authorization
+      </td>
+    </tr>
+
+    <tr>
+      <td>Tools</td>
+      <td>
+        Git, GitHub, Docker, Maven, Postman,
+        Linux, IntelliJ IDEA
+      </td>
+    </tr>
+
+    <tr>
+      <td>Testing &amp; Method</td>
+      <td>
+        JUnit 5, Mockito, OOP, SOLID Principles,
+        Design Patterns, MVC
+      </td>
+    </tr>
+
+    <tr>
+      <td>Cloud (Familiar)</td>
+      <td>
+        AWS (EC2, S3, RDS), Kubernetes, CI/CD
+      </td>
+    </tr>
+
   </table>
+
 </section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
 
 <section id="work" class="wrap">
-  <h2 class="sec-title">Research &amp; Projects</h2>
+
+  <h2 class="sec-title">
+    Research &amp; Projects
+  </h2>
+
+
+
+  <!-- =====================================================
+       PROJECT 1
+       ENTERPRISE PAYMENT ORCHESTRATION
+  ====================================================== -->
 
   <div class="entry">
-    <div class="entry-head">
-      <div class="entry-title">Enterprise Payment Orchestration Platform</div>
-      <div class="entry-status status-built">Architecture Complete</div>
-    </div>
-    <div class="entry-venue">A distributed, event-driven payment system in the fintech tradition</div>
-    <p class="entry-abstract">A distributed payment orchestration platform on Spring Cloud Gateway and Eureka service discovery, routing payment workflows across multiple backend services with automatic failover. Secured with JWT and role-based access control, hardened with Resilience4j circuit breakers, and backed by Redis-idempotent, Kafka-driven event pipelines for the payment lifecycle and audit trail.</p>
-    <div class="entry-keywords"><b>Keywords —</b> Java 21, Spring Boot 3, Spring Cloud, Kafka, Redis, PostgreSQL, Docker, JWT</div>
-    <div class="entry-links"><a href="https://github.com/shubham-sharma-03/enterprise-payment-orchestration-platform" target="_blank">Repository</a></div>
-  </div>
 
-  <div class="entry">
     <div class="entry-head">
-      <div class="entry-title">Enterprise Investment &amp; Portfolio Management System</div>
-      <div class="entry-status status-built">Architecture Complete</div>
-    </div>
-    <div class="entry-venue">An Order Management System for equities, after the institutional model of BlackRock Aladdin</div>
-    <p class="entry-abstract">A polyglot, event-driven Order Management System for equities trading. A Java 21/Spring Boot order execution engine operates alongside a Python/FastAPI risk analytics service — Monte Carlo Value-at-Risk, Sharpe/Sortino ratios, portfolio beta — connected end-to-end through Apache Kafka, with a Kafka-audited execution ledger for trade tracking.</p>
-    <div class="entry-keywords"><b>Keywords —</b> Java 21, Spring Boot 3.2, Python 3.11, FastAPI, Kafka, Redis, PostgreSQL, JWT, Docker</div>
-    <div class="entry-links"><a href="https://github.com/shubham-sharma-03/enterprise-oms" target="_blank">Repository</a></div>
-  </div>
 
-  <div class="entry">
-    <div class="entry-head">
-      <div class="entry-title">Nexus Ops — AI Observability &amp; Incident Intelligence</div>
-      <div class="entry-status status-demo">Demonstration Mode</div>
+      <div class="entry-title">
+        Enterprise Payment Orchestration Platform
+      </div>
+
+      <div class="entry-status status-built">
+        Architecture Complete
+      </div>
+
     </div>
-    <div class="entry-venue">A microservices platform for enterprise telemetry and AI-assisted incident diagnosis</div>
-    <div class="entry-img-wrap" onclick="lbOpen('nexus')">
-      <img src="images/nexus-overview.png" alt="Nexus Ops" loading="lazy" />
-      <div class="entry-img-overlay"><span>View Gallery</span></div>
+
+
+    <div class="entry-venue">
+      A distributed, event-driven payment system in the fintech tradition
     </div>
-    <p class="entry-abstract">A modular observability platform built as Spring Boot microservices behind an API Gateway with service discovery — dashboards for logs, metrics, distributed traces, and incident lifecycle management with SLA/MTTR reporting. The AI Root Cause and Chat Assistant modules implement a designed pipeline (telemetry → embedding → Qdrant vector search → AI analysis → root-cause hypothesis), presently demonstrated on simulated data pending connection to a live AI backend.</p>
-    <div class="entry-keywords"><b>Keywords —</b> Java, Spring Boot, Spring Cloud, Microservices, Docker, React, TypeScript</div>
+
+
+    <!-- MAIN PROJECT IMAGE -->
+
+    <div
+      class="entry-img-wrap"
+      onclick="lbOpen('payment')"
+    >
+
+      <img
+        src="images/payment-dashboard.png"
+        alt="Enterprise Payment Orchestration Platform"
+        loading="lazy"
+      />
+
+      <div class="entry-img-overlay">
+        <span>
+          View Gallery
+        </span>
+      </div>
+
+    </div>
+
+
+    <p class="entry-abstract">
+
+      A distributed payment orchestration platform on Spring Cloud Gateway
+      and Eureka service discovery, routing payment workflows across multiple
+      backend services with automatic failover. Secured with JWT and
+      role-based access control, hardened with Resilience4j circuit breakers,
+      and backed by Redis-idempotent, Kafka-driven event pipelines for the
+      payment lifecycle and audit trail.
+
+    </p>
+
+
+    <div class="entry-keywords">
+
+      <b>Keywords —</b>
+
+      Java 21, Spring Boot 3, Spring Cloud, Kafka,
+      Redis, PostgreSQL, Docker, JWT
+
+    </div>
+
+
     <div class="entry-links">
-      <button class="btn-gallery" onclick="lbOpen('nexus')">⊞ Screenshots (6)</button>
-      <a href="https://github.com/shubham-sharma-03/nexus-ops-ai-observability" target="_blank">Repository</a>
+
+      <button
+        class="btn-gallery"
+        onclick="lbOpen('payment')"
+      >
+        ⊞ Screenshots (3)
+      </button>
+
+      <a
+        href="https://github.com/shubham-sharma-03/enterprise-payment-orchestration-platform"
+        target="_blank"
+      >
+        Repository
+      </a>
+
     </div>
+
   </div>
 
-  <div class="entry">
-    <div class="entry-head">
-      <div class="entry-title">Digital Banking System — Eight-Service Microservices</div>
-      <div class="entry-status status-built">Repository Only</div>
-    </div>
-    <div class="entry-venue">A cloud-native platform spanning six banking domains</div>
-    <div class="entry-img-wrap" onclick="lbOpen('dbs')">
-      <img src="images/dbs-dashboard.png" alt="Digital Banking System" loading="lazy" />
-      <div class="entry-img-overlay"><span>View Gallery</span></div>
-    </div>
-    <p class="entry-abstract">A microservices platform for Authentication, Account, Transaction, Loan, Card, and Customer domains, containerized end-to-end with Docker Compose. Spring Cloud Gateway and Eureka Service Discovery enable inter-service routing without hardcoded URLs; every endpoint is secured with Spring Security, JWT, and RBAC enforced at the gateway.</p>
-    <div class="entry-keywords"><b>Keywords —</b> Java 17, Spring Boot, Spring Cloud, Eureka, API Gateway, Docker Compose, PostgreSQL, JWT</div>
-    <div class="entry-links">
-      <button class="btn-gallery" onclick="lbOpen('dbs')">⊞ Screenshots (4)</button>
-      <a href="https://github.com/shubham-sharma-03/digital-banking-system" target="_blank">Repository</a>
-    </div>
-  </div>
+
+
+  <!-- =====================================================
+       PROJECT 2
+       ENTERPRISE OMS
+  ====================================================== -->
 
   <div class="entry">
+
     <div class="entry-head">
-      <div class="entry-title">MyBank</div>
-      <div class="entry-status status-live">Deployed — Render</div>
+
+      <div class="entry-title">
+        Enterprise Investment &amp; Portfolio Management System
+      </div>
+
+      <div class="entry-status status-built">
+        Architecture Complete
+      </div>
+
     </div>
-    <div class="entry-venue">A full-stack banking application in production</div>
-    <div class="entry-img-wrap" onclick="lbOpen('mybank')">
-      <img src="images/mybank-dashboard.png" alt="MyBank" loading="lazy" />
-      <div class="entry-img-overlay"><span>View Gallery</span></div>
+
+
+    <div class="entry-venue">
+      An Order Management System for equities, after the institutional model
+      of BlackRock Aladdin
     </div>
-    <p class="entry-abstract">A production-deployed banking application covering Accounts, Cards, Loans, Transactions, Statements, and Authentication, built on Spring Boot and PostgreSQL with layered Spring Security, JWT, and RBAC. A JPMC/Chase-inspired Vanilla JS frontend serves the interface live.</p>
-    <div class="entry-keywords"><b>Keywords —</b> Java, Spring Boot, Spring Security, PostgreSQL, JWT, Vanilla JS</div>
+
+
+    <!-- MAIN PROJECT IMAGE -->
+
+    <div
+      class="entry-img-wrap"
+      onclick="lbOpen('oms')"
+    >
+
+      <img
+        src="images/oms-dashboard.png"
+        alt="Enterprise Investment and Portfolio Management System"
+        loading="lazy"
+      />
+
+      <div class="entry-img-overlay">
+
+        <span>
+          View Gallery
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <p class="entry-abstract">
+
+      A polyglot, event-driven Order Management System for equities trading.
+      A Java 21/Spring Boot order execution engine operates alongside a
+      Python/FastAPI risk analytics service — Monte Carlo Value-at-Risk,
+      Sharpe/Sortino ratios, portfolio beta — connected end-to-end through
+      Apache Kafka, with a Kafka-audited execution ledger for trade tracking.
+
+    </p>
+
+
+    <div class="entry-keywords">
+
+      <b>Keywords —</b>
+
+      Java 21, Spring Boot 3.2, Python 3.11, FastAPI,
+      Kafka, Redis, PostgreSQL, JWT, Docker
+
+    </div>
+
+
     <div class="entry-links">
-      <button class="btn-gallery" onclick="lbOpen('mybank')">⊞ Screenshots (2)</button>
-      <a href="https://github.com/shubham-sharma-03/My-Bank" target="_blank">Repository</a>
-      <a href="https://my-bank-a3dv.onrender.com/" target="_blank">Live Instance</a>
+
+      <button
+        class="btn-gallery"
+        onclick="lbOpen('oms')"
+      >
+        ⊞ Screenshots (4)
+      </button>
+
+      <a
+        href="https://github.com/shubham-sharma-03/enterprise-oms"
+        target="_blank"
+      >
+        Repository
+      </a>
+
     </div>
+
   </div>
 
+
+
+  <!-- =====================================================
+       PROJECT 3
+       NEXUS OPS
+  ====================================================== -->
+
   <div class="entry">
+
     <div class="entry-head">
-      <div class="entry-title">Smart Service Booking Platform</div>
-      <div class="entry-status status-live">Deployed — Render</div>
+
+      <div class="entry-title">
+        Nexus Ops — AI Observability &amp; Incident Intelligence
+      </div>
+
+      <div class="entry-status status-demo">
+        Demonstration Mode
+      </div>
+
     </div>
-    <div class="entry-venue">A multi-role booking system with real-time technician dispatch</div>
-    <div class="entry-img-wrap" onclick="lbOpen('smart')">
-      <img src="images/smart-home.png" alt="Smart Service Booking Platform" loading="lazy" />
-      <div class="entry-img-overlay"><span>View Gallery</span></div>
+
+
+    <div class="entry-venue">
+      A microservices platform for enterprise telemetry and AI-assisted
+      incident diagnosis
     </div>
-    <p class="entry-abstract">A multi-role service platform offering 20+ REST API endpoints for customer registration, technician assignment, booking lifecycle, and queue management, backed by a normalized PostgreSQL schema. Integrates the Google Maps API for real-time technician location tracking.</p>
-    <div class="entry-keywords"><b>Keywords —</b> Java, Spring Boot, PostgreSQL, JWT, Google Maps API, REST APIs</div>
+
+
+    <div
+      class="entry-img-wrap"
+      onclick="lbOpen('nexus')"
+    >
+
+      <img
+        src="images/nexus-overview.png"
+        alt="Nexus Ops"
+        loading="lazy"
+      />
+
+      <div class="entry-img-overlay">
+
+        <span>
+          View Gallery
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <p class="entry-abstract">
+
+      A modular observability platform built as Spring Boot microservices
+      behind an API Gateway with service discovery — dashboards for logs,
+      metrics, distributed traces, and incident lifecycle management with
+      SLA/MTTR reporting. The AI Root Cause and Chat Assistant modules
+      implement a designed pipeline (telemetry → embedding → Qdrant vector
+      search → AI analysis → root-cause hypothesis), presently demonstrated
+      on simulated data pending connection to a live AI backend.
+
+    </p>
+
+
+    <div class="entry-keywords">
+
+      <b>Keywords —</b>
+
+      Java, Spring Boot, Spring Cloud, Microservices,
+      Docker, React, TypeScript
+
+    </div>
+
+
     <div class="entry-links">
-      <button class="btn-gallery" onclick="lbOpen('smart')">⊞ Screenshots (6)</button>
-      <a href="https://github.com/shubham-sharma-03/smart-service-booking-platform" target="_blank">Repository</a>
-      <a href="https://smart-service-booking-platform-ee5n.onrender.com/" target="_blank">Live Instance</a>
+
+      <button
+        class="btn-gallery"
+        onclick="lbOpen('nexus')"
+      >
+        ⊞ Screenshots (6)
+      </button>
+
+      <a
+        href="https://github.com/shubham-sharma-03/nexus-ops-ai-observability"
+        target="_blank"
+      >
+        Repository
+      </a>
+
     </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       PROJECT 4
+       DIGITAL BANKING
+  ====================================================== -->
+
+  <div class="entry">
+
+    <div class="entry-head">
+
+      <div class="entry-title">
+        Digital Banking System — Eight-Service Microservices
+      </div>
+
+      <div class="entry-status status-built">
+        Repository Only
+      </div>
+
+    </div>
+
+
+    <div class="entry-venue">
+      A cloud-native platform spanning six banking domains
+    </div>
+
+
+    <div
+      class="entry-img-wrap"
+      onclick="lbOpen('dbs')"
+    >
+
+      <img
+        src="images/dbs-dashboard.png"
+        alt="Digital Banking System"
+        loading="lazy"
+      />
+
+      <div class="entry-img-overlay">
+
+        <span>
+          View Gallery
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <p class="entry-abstract">
+
+      A microservices platform for Authentication, Account, Transaction,
+      Loan, Card, and Customer domains, containerized end-to-end with
+      Docker Compose. Spring Cloud Gateway and Eureka Service Discovery
+      enable inter-service routing without hardcoded URLs; every endpoint
+      is secured with Spring Security, JWT, and RBAC enforced at the gateway.
+
+    </p>
+
+
+    <div class="entry-keywords">
+
+      <b>Keywords —</b>
+
+      Java 17, Spring Boot, Spring Cloud, Eureka,
+      API Gateway, Docker Compose, PostgreSQL, JWT
+
+    </div>
+
+
+    <div class="entry-links">
+
+      <button
+        class="btn-gallery"
+        onclick="lbOpen('dbs')"
+      >
+        ⊞ Screenshots (4)
+      </button>
+
+      <a
+        href="https://github.com/shubham-sharma-03/digital-banking-system"
+        target="_blank"
+      >
+        Repository
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       PROJECT 5
+       MYBANK
+  ====================================================== -->
+
+  <div class="entry">
+
+    <div class="entry-head">
+
+      <div class="entry-title">
+        MyBank
+      </div>
+
+      <div class="entry-status status-live">
+        Deployed — Render
+      </div>
+
+    </div>
+
+
+    <div class="entry-venue">
+      A full-stack banking application in production
+    </div>
+
+
+    <div
+      class="entry-img-wrap"
+      onclick="lbOpen('mybank')"
+    >
+
+      <img
+        src="images/mybank-dashboard.png"
+        alt="MyBank"
+        loading="lazy"
+      />
+
+      <div class="entry-img-overlay">
+
+        <span>
+          View Gallery
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <p class="entry-abstract">
+
+      A production-deployed banking application covering Accounts, Cards,
+      Loans, Transactions, Statements, and Authentication, built on
+      Spring Boot and PostgreSQL with layered Spring Security, JWT, and RBAC.
+      A JPMC/Chase-inspired Vanilla JS frontend serves the interface live.
+
+    </p>
+
+
+    <div class="entry-keywords">
+
+      <b>Keywords —</b>
+
+      Java, Spring Boot, Spring Security,
+      PostgreSQL, JWT, Vanilla JS
+
+    </div>
+
+
+    <div class="entry-links">
+
+      <button
+        class="btn-gallery"
+        onclick="lbOpen('mybank')"
+      >
+        ⊞ Screenshots (2)
+      </button>
+
+      <a
+        href="https://github.com/shubham-sharma-03/My-Bank"
+        target="_blank"
+      >
+        Repository
+      </a>
+
+      <a
+        href="https://my-bank-a3dv.onrender.com/"
+        target="_blank"
+      >
+        Live Instance
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       PROJECT 6
+       SMART SERVICE BOOKING
+  ====================================================== -->
+
+  <div class="entry">
+
+    <div class="entry-head">
+
+      <div class="entry-title">
+        Smart Service Booking Platform
+      </div>
+
+      <div class="entry-status status-live">
+        Deployed — Render
+      </div>
+
+    </div>
+
+
+    <div class="entry-venue">
+      A multi-role booking system with real-time technician dispatch
+    </div>
+
+
+    <div
+      class="entry-img-wrap"
+      onclick="lbOpen('smart')"
+    >
+
+      <img
+        src="images/smart-home.png"
+        alt="Smart Service Booking Platform"
+        loading="lazy"
+      />
+
+      <div class="entry-img-overlay">
+
+        <span>
+          View Gallery
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <p class="entry-abstract">
+
+      A multi-role service platform offering 20+ REST API endpoints for
+      customer registration, technician assignment, booking lifecycle,
+      and queue management, backed by a normalized PostgreSQL schema.
+      Integrates the Google Maps API for real-time technician location tracking.
+
+    </p>
+
+
+    <div class="entry-keywords">
+
+      <b>Keywords —</b>
+
+      Java, Spring Boot, PostgreSQL, JWT,
+      Google Maps API, REST APIs
+
+    </div>
+
+
+    <div class="entry-links">
+
+      <button
+        class="btn-gallery"
+        onclick="lbOpen('smart')"
+      >
+        ⊞ Screenshots (6)
+      </button>
+
+      <a
+        href="https://github.com/shubham-sharma-03/smart-service-booking-platform"
+        target="_blank"
+      >
+        Repository
+      </a>
+
+      <a
+        href="https://smart-service-booking-platform-ee5n.onrender.com/"
+        target="_blank"
+      >
+        Live Instance
+      </a>
+
+    </div>
+
   </div>
 
 </section>
+
+
+
+<!-- =========================
+     HONORS
+========================= -->
 
 <section id="honors" class="wrap">
-  <h2 class="sec-title">Honors, Certifications &amp; Distinctions</h2>
+
+  <h2 class="sec-title">
+    Honors, Certifications &amp; Distinctions
+  </h2>
+
+
   <div class="two-col">
+
+
     <div>
-      <div class="label" style="margin-bottom:16px;">Certifications</div>
-      <div class="cert-entry">
-        <div class="cert-name">Generative AI Certification</div>
-        <div class="cert-org">Oracle</div>
+
+      <div
+        class="label"
+        style="margin-bottom:16px;"
+      >
+        Certifications
       </div>
+
+
       <div class="cert-entry">
-        <div class="cert-name">Software Engineering Virtual Experience Program</div>
-        <div class="cert-org">JPMorgan Chase &amp; Co. · Forage</div>
+
+        <div class="cert-name">
+          Generative AI Certification
+        </div>
+
+        <div class="cert-org">
+          Oracle
+        </div>
+
       </div>
+
+
+      <div class="cert-entry">
+
+        <div class="cert-name">
+          Software Engineering Virtual Experience Program
+        </div>
+
+        <div class="cert-org">
+          JPMorgan Chase &amp; Co. · Forage
+        </div>
+
+      </div>
+
     </div>
+
+
+
     <div>
-      <div class="label" style="margin-bottom:16px;">Distinctions</div>
-      <div class="honor-item"><span>Designed and implemented <b>45+ REST API endpoints</b> across backend applications using Java, Spring Boot, and PostgreSQL.</span></div>
-      <div class="honor-item"><span>Co-authored a <b>technical research paper</b> on LiteWing, a gesture-controlled drone system built with ESP32-S3 and MPU6050 sensors.</span></div>
-      <div class="honor-item"><span>Solved <b>200+ Data Structures &amp; Algorithms</b> problems on LeetCode and GeeksforGeeks, spanning Trees, Graphs, Dynamic Programming, and Binary Search.</span></div>
+
+      <div
+        class="label"
+        style="margin-bottom:16px;"
+      >
+        Distinctions
+      </div>
+
+
+      <div class="honor-item">
+
+        <span>
+          Designed and implemented
+          <b>45+ REST API endpoints</b>
+          across backend applications using Java,
+          Spring Boot, and PostgreSQL.
+        </span>
+
+      </div>
+
+
+      <div class="honor-item">
+
+        <span>
+          Co-authored a
+          <b>technical research paper</b>
+          on LiteWing, a gesture-controlled drone system
+          built with ESP32-S3 and MPU6050 sensors.
+        </span>
+
+      </div>
+
+
+      <div class="honor-item">
+
+        <span>
+          Solved
+          <b>200+ Data Structures &amp; Algorithms</b>
+          problems on LeetCode and GeeksforGeeks,
+          spanning Trees, Graphs, Dynamic Programming,
+          and Binary Search.
+        </span>
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
-<section id="contact" class="closing wrap" style="border-bottom:none;">
-  <div class="closing-mark">In Closing</div>
-  <h2 class="closing-title">Available for Appointment</h2>
-  <div class="closing-sub">Backend Engineering Roles · Mumbai &amp; Remote · Class of 2026</div>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+  id="contact"
+  class="closing wrap"
+  style="border-bottom:none;"
+>
+
+  <div class="closing-mark">
+    In Closing
+  </div>
+
+
+  <h2 class="closing-title">
+    Available for Appointment
+  </h2>
+
+
+  <div class="closing-sub">
+    Backend Engineering Roles · Mumbai &amp; Remote · Class of 2026
+  </div>
+
+
   <div class="closing-links">
-    <a href="Shubham_Sharma_Resume.pdf" target="_blank">Resume</a>
-    <a href="mailto:sharmashubham05275@gmail.com">Email</a>
-    <a href="https://github.com/shubham-sharma-03" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/shubhamsharma2004" target="_blank">LinkedIn</a>
-    <a href="tel:+917715931782">+91 77159 31782</a>
+
+    <a
+      href="Shubham_Sharma_Resume.pdf"
+      target="_blank"
+    >
+      Resume
+    </a>
+
+    <a href="mailto:sharmashubham05275@gmail.com">
+      Email
+    </a>
+
+    <a
+      href="https://github.com/shubham-sharma-03"
+      target="_blank"
+    >
+      GitHub
+    </a>
+
+    <a
+      href="https://linkedin.com/in/shubhamsharma2004"
+      target="_blank"
+    >
+      LinkedIn
+    </a>
+
+    <a href="tel:+917715931782">
+      +91 77159 31782
+    </a>
+
   </div>
+
 </section>
 
-<footer>Shubham Sharma &nbsp;·&nbsp; Mumbai, India &nbsp;·&nbsp; 2026</footer>
 
-<div class="lb-overlay" id="lb-overlay">
+
+<footer>
+
+  Shubham Sharma
+  &nbsp;·&nbsp;
+  Mumbai, India
+  &nbsp;·&nbsp;
+  2026
+
+</footer>
+
+
+
+<!-- =========================
+     LIGHTBOX HTML
+========================= -->
+
+<div
+  class="lb-overlay"
+  id="lb-overlay"
+>
+
   <div class="lb-box">
+
+
     <div class="lb-top">
-      <span class="lb-title" id="lb-title"></span>
-      <button class="lb-close" onclick="lbClose()">✕ Close</button>
+
+      <span
+        class="lb-title"
+        id="lb-title"
+      ></span>
+
+
+      <button
+        class="lb-close"
+        onclick="lbClose()"
+      >
+        ✕ Close
+      </button>
+
     </div>
+
+
     <div class="lb-img-wrap">
-      <img id="lb-img" src="" alt="" />
+
+      <img
+        id="lb-img"
+        src=""
+        alt=""
+      />
+
     </div>
+
+
     <div class="lb-bottom">
-      <span class="lb-caption" id="lb-caption"></span>
+
+      <span
+        class="lb-caption"
+        id="lb-caption"
+      ></span>
+
+
       <div class="lb-nav">
-        <button class="lb-btn" id="lb-prev" onclick="lbNav(-1)">← Prev</button>
-        <span class="lb-counter" id="lb-counter"></span>
-        <button class="lb-btn" id="lb-next" onclick="lbNav(1)">Next →</button>
+
+        <button
+          class="lb-btn"
+          id="lb-prev"
+          onclick="lbNav(-1)"
+        >
+          ← Prev
+        </button>
+
+
+        <span
+          class="lb-counter"
+          id="lb-counter"
+        ></span>
+
+
+        <button
+          class="lb-btn"
+          id="lb-next"
+          onclick="lbNav(1)"
+        >
+          Next →
+        </button>
+
       </div>
-      <div class="lb-dots" id="lb-dots"></div>
+
+
+      <div
+        class="lb-dots"
+        id="lb-dots"
+      ></div>
+
     </div>
+
   </div>
+
 </div>
 
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
-  const GALLERY = {
-    dbs: [
-      { src: "images/dbs-login.png",     label: "Login Page" },
-      { src: "images/dbs-dashboard.png", label: "Dashboard" },
-      { src: "images/dbs-cards.png",     label: "Cards Module" },
-      { src: "images/dbs-loans.png",     label: "Loans Module" }
-    ],
-    mybank: [
-      { src: "images/mybank-login.png",     label: "Login Page" },
-      { src: "images/mybank-dashboard.png", label: "Banking Dashboard" }
-    ],
-    smart: [
-      { src: "images/smart-home.png",      label: "Home Page" },
-      { src: "images/smart-login.png",     label: "Login Page" },
-      { src: "images/smart-dashboard.png", label: "Dashboard" },
-      { src: "images/smart-booking.png",   label: "Booking Form" },
-      { src: "images/smart-history.png",   label: "Booking History" },
-      { src: "images/smart-tracking.png",  label: "Technician Tracking" }
-    ],
-    nexus: [
-      { src: "images/nexus-login.png",         label: "Sign In" },
-      { src: "images/nexus-overview.png",      label: "Observability Command Center" },
-      { src: "images/nexus-incidents.png",     label: "Incident Workspace" },
-      { src: "images/nexus-ai-root-cause.png", label: "AI Root Cause Analysis" },
-      { src: "images/nexus-metrics.png",       label: "Time-Series Metrics" },
-      { src: "images/nexus-logs.png",          label: "Log Explorer" }
-    ]
-  };
-  const TITLES = {dbs:'Digital Banking System', mybank:'MyBank', smart:'Smart Service Booking', nexus:'Nexus Ops'};
 
-  let cur = [], idx = 0;
 
-  function lbOpen(key) {
-    cur = GALLERY[key]; idx = 0;
-    document.getElementById('lb-title').textContent = TITLES[key];
-    lbRender();
-    document.getElementById('lb-overlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function lbClose() {
-    document.getElementById('lb-overlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function lbNav(d) { idx = Math.max(0, Math.min(cur.length-1, idx+d)); lbRender(); }
-  function lbGoto(i) { idx = i; lbRender(); }
-  function lbRender() {
-    const item = cur[idx];
-    document.getElementById('lb-img').src = item.src;
-    document.getElementById('lb-img').alt = item.label;
-    document.getElementById('lb-caption').textContent = item.label;
-    document.getElementById('lb-counter').textContent = (idx+1)+' / '+cur.length;
-    document.getElementById('lb-prev').disabled = idx === 0;
-    document.getElementById('lb-next').disabled = idx === cur.length-1;
-    const dots = document.getElementById('lb-dots');
-    dots.innerHTML = '';
-    cur.forEach((_,i) => {
-      const d = document.createElement('button');
-      d.className = 'lb-dot'+(i===idx?' active':'');
-      d.onclick = () => lbGoto(i); dots.appendChild(d);
-    });
-  }
-  document.getElementById('lb-overlay').addEventListener('click', e => { if(e.target===document.getElementById('lb-overlay')) lbClose(); });
-  document.addEventListener('keydown', e => {
-    if(!document.getElementById('lb-overlay').classList.contains('open')) return;
-    if(e.key==='Escape') lbClose();
-    if(e.key==='ArrowLeft') lbNav(-1);
-    if(e.key==='ArrowRight') lbNav(1);
+/* =====================================================
+   PROJECT IMAGE GALLERIES
+===================================================== */
+
+const GALLERY = {
+
+
+  /* =========================
+     PAYMENT ORCHESTRATION
+  ========================= */
+
+  payment: [
+
+    {
+      src: "images/payment-dashboard.png",
+      label: "Payment Dashboard"
+    },
+
+    {
+      src: "images/payment-transactions.png",
+      label: "Payment Transactions"
+    },
+
+    {
+      src: "images/payment-routing.png",
+      label: "Payment Routing & Processing"
+    }
+
+  ],
+
+
+
+  /* =========================
+     ENTERPRISE OMS
+  ========================= */
+
+  oms: [
+
+    {
+      src: "images/oms-dashboard.png",
+      label: "Portfolio Dashboard"
+    },
+
+    {
+      src: "images/oms-portfolio.png",
+      label: "Portfolio Analytics"
+    },
+
+    {
+      src: "images/oms-orders.png",
+      label: "Order Management"
+    },
+
+    {
+      src: "images/oms-risk.png",
+      label: "Risk Analytics"
+    }
+
+  ],
+
+
+
+  /* =========================
+     DIGITAL BANKING
+  ========================= */
+
+  dbs: [
+
+    {
+      src: "images/dbs-login.png",
+      label: "Login Page"
+    },
+
+    {
+      src: "images/dbs-dashboard.png",
+      label: "Dashboard"
+    },
+
+    {
+      src: "images/dbs-cards.png",
+      label: "Cards Module"
+    },
+
+    {
+      src: "images/dbs-loans.png",
+      label: "Loans Module"
+    }
+
+  ],
+
+
+
+  /* =========================
+     MYBANK
+  ========================= */
+
+  mybank: [
+
+    {
+      src: "images/mybank-login.png",
+      label: "Login Page"
+    },
+
+    {
+      src: "images/mybank-dashboard.png",
+      label: "Banking Dashboard"
+    }
+
+  ],
+
+
+
+  /* =========================
+     SMART SERVICE BOOKING
+  ========================= */
+
+  smart: [
+
+    {
+      src: "images/smart-home.png",
+      label: "Home Page"
+    },
+
+    {
+      src: "images/smart-login.png",
+      label: "Login Page"
+    },
+
+    {
+      src: "images/smart-dashboard.png",
+      label: "Dashboard"
+    },
+
+    {
+      src: "images/smart-booking.png",
+      label: "Booking Form"
+    },
+
+    {
+      src: "images/smart-history.png",
+      label: "Booking History"
+    },
+
+    {
+      src: "images/smart-tracking.png",
+      label: "Technician Tracking"
+    }
+
+  ],
+
+
+
+  /* =========================
+     NEXUS OPS
+  ========================= */
+
+  nexus: [
+
+    {
+      src: "images/nexus-login.png",
+      label: "Sign In"
+    },
+
+    {
+      src: "images/nexus-overview.png",
+      label: "Observability Command Center"
+    },
+
+    {
+      src: "images/nexus-incidents.png",
+      label: "Incident Workspace"
+    },
+
+    {
+      src: "images/nexus-ai-root-cause.png",
+      label: "AI Root Cause Analysis"
+    },
+
+    {
+      src: "images/nexus-metrics.png",
+      label: "Time-Series Metrics"
+    },
+
+    {
+      src: "images/nexus-logs.png",
+      label: "Log Explorer"
+    }
+
+  ]
+
+};
+
+
+
+/* =====================================================
+   PROJECT TITLES
+===================================================== */
+
+const TITLES = {
+
+  payment:
+    'Enterprise Payment Orchestration Platform',
+
+  oms:
+    'Enterprise Investment & Portfolio Management System',
+
+  dbs:
+    'Digital Banking System',
+
+  mybank:
+    'MyBank',
+
+  smart:
+    'Smart Service Booking',
+
+  nexus:
+    'Nexus Ops'
+
+};
+
+
+
+/* =====================================================
+   LIGHTBOX STATE
+===================================================== */
+
+let cur = [];
+let idx = 0;
+
+
+
+/* =====================================================
+   OPEN LIGHTBOX
+===================================================== */
+
+function lbOpen(key){
+
+  cur = GALLERY[key];
+
+  idx = 0;
+
+  document.getElementById('lb-title').textContent =
+    TITLES[key];
+
+  lbRender();
+
+  document
+    .getElementById('lb-overlay')
+    .classList.add('open');
+
+  document.body.style.overflow = 'hidden';
+
+}
+
+
+
+/* =====================================================
+   CLOSE LIGHTBOX
+===================================================== */
+
+function lbClose(){
+
+  document
+    .getElementById('lb-overlay')
+    .classList.remove('open');
+
+  document.body.style.overflow = '';
+
+}
+
+
+
+/* =====================================================
+   PREVIOUS / NEXT
+===================================================== */
+
+function lbNav(d){
+
+  idx = Math.max(
+    0,
+    Math.min(
+      cur.length - 1,
+      idx + d
+    )
+  );
+
+  lbRender();
+
+}
+
+
+
+/* =====================================================
+   GO TO SPECIFIC IMAGE
+===================================================== */
+
+function lbGoto(i){
+
+  idx = i;
+
+  lbRender();
+
+}
+
+
+
+/* =====================================================
+   RENDER IMAGE
+===================================================== */
+
+function lbRender(){
+
+  const item = cur[idx];
+
+  document.getElementById('lb-img').src =
+    item.src;
+
+  document.getElementById('lb-img').alt =
+    item.label;
+
+  document.getElementById('lb-caption').textContent =
+    item.label;
+
+  document.getElementById('lb-counter').textContent =
+    (idx + 1) + ' / ' + cur.length;
+
+
+  document.getElementById('lb-prev').disabled =
+    idx === 0;
+
+  document.getElementById('lb-next').disabled =
+    idx === cur.length - 1;
+
+
+  const dots =
+    document.getElementById('lb-dots');
+
+  dots.innerHTML = '';
+
+
+  cur.forEach((_, i) => {
+
+    const d =
+      document.createElement('button');
+
+    d.className =
+      'lb-dot' +
+      (i === idx ? ' active' : '');
+
+    d.onclick = () =>
+      lbGoto(i);
+
+    dots.appendChild(d);
+
   });
+
+}
+
+
+
+/* =====================================================
+   CLOSE WHEN CLICKING OUTSIDE IMAGE
+===================================================== */
+
+document
+  .getElementById('lb-overlay')
+  .addEventListener(
+    'click',
+    e => {
+
+      if(
+        e.target ===
+        document.getElementById('lb-overlay')
+      ){
+
+        lbClose();
+
+      }
+
+    }
+  );
+
+
+
+/* =====================================================
+   KEYBOARD CONTROLS
+===================================================== */
+
+document.addEventListener(
+  'keydown',
+  e => {
+
+    if(
+      !document
+        .getElementById('lb-overlay')
+        .classList
+        .contains('open')
+    ){
+
+      return;
+
+    }
+
+
+    if(e.key === 'Escape'){
+      lbClose();
+    }
+
+
+    if(e.key === 'ArrowLeft'){
+      lbNav(-1);
+    }
+
+
+    if(e.key === 'ArrowRight'){
+      lbNav(1);
+    }
+
+  }
+);
+
 </script>
+
 
 </body>
 </html>
